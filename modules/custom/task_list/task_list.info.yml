@@ -1,0 +1,4 @@
+name: Tasks list
+description: list of junior dev tasks
+type: module
+core_version_requirement: 9.x

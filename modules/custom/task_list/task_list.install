@@ -1,0 +1,89 @@
+<?php
+
+function task_list_schema() {
+  $schema['tasks'] = [
+    'fields' => [
+
+      'id' => [
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'description' => 'Primary key: Unique ID',
+      ],
+
+      'task_name' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Task name',
+      ],
+
+      'task_url' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Task URL',
+      ],
+
+      'papa_name' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Supervisor name',
+      ],
+
+      'papa_evaluation' => [
+        'type' => 'float',
+        'length' => '2',
+        'not null' => FALSE,
+        'description' => 'Supervisor time evaluation',
+      ],
+
+      'kinder_evaluation' => [
+        'type' => 'float',
+        'length' => '2',
+        'not null' => FALSE,
+        'description' => 'Junior dev time evaluation',
+      ],
+
+      'begin_time' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Begin date',
+      ],
+
+      'end_time' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Task end time',
+      ],
+
+      'created_timestamp' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Task name',
+      ],
+
+      'done' => [
+        'type' => 'varchar',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Task name',
+      ],
+
+      'duration' => [
+        'type' => 'int',
+        'length' => '255',
+        'not null' => FALSE,
+        'description' => 'Time developer needed to finish task',
+      ],
+    ],
+
+    'primary key' => array('id'),
+  ];
+
+  return $schema;
+}

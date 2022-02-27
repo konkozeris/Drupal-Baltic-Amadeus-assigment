@@ -1,0 +1,7 @@
+input_form.input_form:
+  path: 'task-input-form'
+  defaults:
+    _form: '\Drupal\input_form\Form\InputForm'
+    _title: 'Task input form'
+  requirements:
+    _permission: 'access content'

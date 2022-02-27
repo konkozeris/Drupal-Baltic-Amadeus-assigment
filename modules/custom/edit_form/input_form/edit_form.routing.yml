@@ -1,0 +1,7 @@
+edit_form.edit_form:
+  path: '/edit/{task_id}'
+  defaults:
+    _form: '\Drupal\edit_form\Form\EditForm'
+    _title: 'Task edit form'
+  requirements:
+    _permission: 'access content'

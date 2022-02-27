@@ -1,0 +1,4 @@
+name: Task input form
+description: input for new tasks
+type: module
+core_version_requirement: 9.x

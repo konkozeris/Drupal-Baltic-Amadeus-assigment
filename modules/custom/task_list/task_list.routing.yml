@@ -1,0 +1,8 @@
+task_list.task_list:
+  path: '/tasks-list'
+  defaults:
+    _form: '\Drupal\task_list\Table\TaskList'
+    _type: module
+    _title: 'Task list module'
+  requirements:
+    _permission: 'access content'
