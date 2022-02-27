@@ -27,7 +27,7 @@ class EditForm extends FormBase
 
       if ($role[0] == $anonymous || $role[0] == $junior_dev)
       {
-        \Drupal::messenger()->addError('You have no permission to create task');
+        \Drupal::messenger()->addError('You have no permission to edit task');
         return;
       }
       else if ($role[1] == $administrator || $role[1] == $senior_dev)
