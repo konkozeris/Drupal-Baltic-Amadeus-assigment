@@ -130,6 +130,15 @@
                 0 => '9.3.6',
             ),
         ),
+        'drupal/charts' => array(
+            'pretty_version' => '3.3.0',
+            'version' => '3.3.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/charts',
+            'aliases' => array(),
+            'reference' => '8.x-3.3',
+            'dev_requirement' => false,
+        ),
         'drupal/ckeditor' => array(
             'dev_requirement' => false,
             'replaced' => array(
