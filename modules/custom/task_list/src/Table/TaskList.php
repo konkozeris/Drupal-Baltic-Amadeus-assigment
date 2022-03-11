@@ -102,12 +102,22 @@ class TaskList extends FormBase {
   public function edit_task(array $form, FormStateInterface &$form_state)
   {
     $task_id = $form_state->getValue('table');
-    $path = 'edit/'.$task_id;
+    echo $task_id;
+    if(isset($task_id))
+    {
+      $path = 'edit/'.$task_id;
+      $response = new HttpFoundationRedirectResponse($path);
+      $response->send();
 
-    $response = new HttpFoundationRedirectResponse($path);
-    $response->send();
+      return;
+    }
+    else
+    {
+      \Drupal::messenger()->addStatus('please select task');
+      return;
+    }
 
-    return;
+
 
   }
   public function submitForm(array &$form, FormStateInterface $form_state)

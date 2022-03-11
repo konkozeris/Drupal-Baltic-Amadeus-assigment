@@ -143,6 +143,9 @@ AddEncoding gzip svgz
   # Copy and adapt this rule to directly execute PHP files in contributed or
   # custom modules or to run another PHP application in the same directory.
   RewriteCond %{REQUEST_URI} !/core/modules/statistics/statistics\.php$
+  RewriteCond %{REQUEST_URI} !/modules/custom/task_chart/task_chart_data.php$
+  RewriteCond %{REQUEST_URI} !/modules/custom/task_chart/src/Controller/TaskChartController.php$
+  RewriteCond %{REQUEST_URI} !/modules/custom/task_chart/task_chart_data.module$
   # Deny access to any other PHP files that do not match the rules above.
   # Specifically, disallow autoload.php from being served directly.
   RewriteRule "^(.+/.*|autoload)\.php($|/)" - [F]

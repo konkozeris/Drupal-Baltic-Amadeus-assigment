@@ -104,6 +104,11 @@ class EditForm extends FormBase
           '#required' => TRUE,
           ];
 
+        $form['done'] = [
+          '#type' => 'checkbox',
+          '#title' => $this->t('finished'),
+        ];
+
         $form['end_time'] = [
           '#type' => 'date',
           '#date_format' => 'Y-m-d H:i',
@@ -112,20 +117,20 @@ class EditForm extends FormBase
           '#required' => TRUE,
         ];
 
-        $form['done'] = [
-          '#type' => 'checkbox',
-          '#date_format' => 'Y-m-d H:i',
-          '#title' => $this->t('finished'),
-          '#value' => 'yes',
+        $form['duration'] = [
+          '#type' => 'number',
+          '#value' => $results['duration'],
+          '#title' => $this->t('Hours junior dev required to finish task (only numeric)'),
+          '#required' => TRUE,
         ];
 
         $form['submit'] = [
           '#type' => 'submit',
           '#value' => $this->t('submit')
         ];
+
         $storage = $form_state->getStorage();
         $task_id = $storage[0];
-        var_dump($task_id);
 
         return $form;
       }
@@ -145,6 +150,16 @@ class EditForm extends FormBase
         $done = 'no';
       };
 
+      //duration numeric
+
+      // if(is_numeric($form_state->getValue('duration'))) {
+
+      //   $duration = $form_state->getValue('duration');
+      // } else {
+      //   \Drupal::messenger()->addError('Duration must be numeric');
+      //   return;
+      // }
+
       /** @var \Drupal\Core\Database\Connection $connection */
       $connection = \Drupal::service('database');
 
@@ -158,13 +173,16 @@ class EditForm extends FormBase
         'begin_time' => $form_state->getValue('begin_time'),
         'end_time' => $form_state->getValue('end_time'),
         'done' => $done,
+        'duration' => $form_state->getValue('duration'),
       ])
       ->where('id = '.$task_id.'')
       ->execute();
 
-      $path = '/tasks-list';
+      $path = '/work_assigments/drupal/baltic_amadeus/tasks-list';
       $response = new RedirectResponse($path);
+      $response->send();
       \Drupal::messenger()->addStatus('Task updated');
+
       return;
 
     }

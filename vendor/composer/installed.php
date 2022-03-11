@@ -784,6 +784,15 @@
                 0 => '9.3.6',
             ),
         ),
+        'drupal/storage' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'type' => 'drupal-module',
+            'install_path' => __DIR__ . '/../../modules/contrib/storage',
+            'aliases' => array(),
+            'reference' => '1.1.0',
+            'dev_requirement' => false,
+        ),
         'drupal/syslog' => array(
             'dev_requirement' => false,
             'replaced' => array(

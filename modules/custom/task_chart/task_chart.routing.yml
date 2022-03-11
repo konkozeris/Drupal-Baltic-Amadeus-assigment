@@ -1,0 +1,8 @@
+task_chart.task_chart:
+  path: '/tasks-chart'
+  defaults:
+    _controller: '\Drupal\task_chart\Controller\TaskChartController::page'
+    _type: module
+    _title: 'Tasks chart module'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,22 @@
+google_charts:
+  header: true
+  js:
+    https://www.gstatic.com/charts/loader.js: {type: external}
+  dependencies:
+    - core/jquery
+
+task_chart:
+  header: true
+  js:
+    js/task_chart_build.js: {}
+  dependencies:
+    - core/jquery
+
+jquery:
+  header: true
+  js:
+    //ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js: {type: external}
+  dependencies:
+    - core/jquery
+
+
